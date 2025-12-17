@@ -13,18 +13,19 @@ export const Button: React.FC<ButtonProps> = ({
   children, 
   ...props 
 }) => {
-  const baseStyles = "inline-flex items-center justify-center rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none";
+  // Base: Bold border, hard shadow, neo-brutalist transition
+  const baseStyles = "inline-flex items-center justify-center font-bold border-2 border-black transition-all active:translate-x-[2px] active:translate-y-[2px] active:shadow-none focus:outline-none";
   
   const variants = {
-    primary: "bg-brand-900 text-white hover:bg-brand-600 focus:ring-brand-500",
-    secondary: "bg-brand-100 text-brand-900 hover:bg-brand-200 focus:ring-brand-200",
-    outline: "border border-brand-300 text-brand-900 hover:bg-brand-50 focus:ring-brand-200",
-    ghost: "text-brand-900 hover:bg-brand-50 focus:ring-brand-200",
+    primary: "bg-black text-white shadow-neo hover:bg-gray-900",
+    secondary: "bg-neo-bg text-black shadow-neo hover:bg-yellow-400",
+    outline: "bg-white text-black shadow-neo hover:bg-gray-50",
+    ghost: "border-transparent shadow-none hover:bg-gray-200 hover:border-black hover:shadow-neo",
   };
 
   const sizes = {
-    sm: "h-9 px-3 text-sm",
-    md: "h-11 px-6 text-base",
+    sm: "h-9 px-4 text-sm",
+    md: "h-12 px-6 text-base",
     lg: "h-14 px-8 text-lg",
   };
 

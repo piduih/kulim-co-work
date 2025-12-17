@@ -10,7 +10,7 @@ export const ChatBot: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'model',
-      text: "Hi there! I'm Kai. Boring weekend? How can I help you get productive today in Kulim?",
+      text: "Hi! I'm Kai. Boring weekend? Ask me anything about the space.",
       timestamp: new Date()
     }
   ]);
@@ -52,29 +52,34 @@ export const ChatBot: React.FC = () => {
       {/* Floating Action Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full shadow-lg transition-all duration-300 hover:scale-105 ${
-          isOpen ? 'bg-red-500 rotate-90' : 'bg-brand-900'
-        } text-white`}
+        className={`fixed bottom-6 right-6 z-50 flex h-16 w-16 items-center justify-center border-2 border-black shadow-neo-lg transition-all active:translate-x-[2px] active:translate-y-[2px] active:shadow-none ${
+          isOpen ? 'bg-red-500 text-white' : 'bg-neo-bg text-black'
+        }`}
       >
-        {isOpen ? <X size={24} /> : <MessageSquare size={24} />}
+        {isOpen ? <X size={28} strokeWidth={3} /> : <MessageSquare size={28} strokeWidth={3} />}
       </button>
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 z-50 flex h-[500px] w-[90vw] flex-col overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-black/5 sm:w-[380px]">
+        <div className="fixed bottom-28 right-6 z-50 flex h-[500px] w-[90vw] flex-col overflow-hidden border-2 border-black bg-white shadow-neo-lg sm:w-[380px]">
           {/* Header */}
-          <div className="flex items-center gap-2 border-b bg-brand-50 p-4">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-200 text-brand-800">
-              <Sparkles size={16} />
+          <div className="flex items-center justify-between border-b-2 border-black bg-neo-accent p-4 text-white">
+            <div className="flex items-center gap-3">
+              <div className="flex h-8 w-8 items-center justify-center border-2 border-black bg-white text-black">
+                <Sparkles size={16} />
+              </div>
+              <div>
+                <h3 className="text-base font-black uppercase">Kai_Bot.exe</h3>
+                <p className="font-mono text-xs">● System Online</p>
+              </div>
             </div>
-            <div>
-              <h3 className="text-sm font-semibold text-gray-900">Kai (AI Manager)</h3>
-              <p className="text-xs text-green-600">● Online</p>
-            </div>
+            <button onClick={() => setIsOpen(false)} className="hover:text-black">
+                <X size={20} />
+            </button>
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto bg-gray-50 p-4 scrollbar-hide">
+          <div className="flex-1 overflow-y-auto bg-gray-100 p-4 scrollbar-hide" style={{ backgroundImage: 'radial-gradient(#ccc 1px, transparent 1px)', backgroundSize: '10px 10px' }}>
             <div className="space-y-4">
               {messages.map((msg, idx) => (
                 <div
@@ -82,10 +87,10 @@ export const ChatBot: React.FC = () => {
                   className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
                 >
                   <div
-                    className={`max-w-[85%] px-4 py-2.5 shadow-sm text-sm leading-relaxed ${
+                    className={`max-w-[85%] border-2 border-black p-3 text-sm font-medium shadow-neo-sm ${
                       msg.role === 'user'
-                        ? 'rounded-2xl rounded-tr-none bg-brand-900 text-white'
-                        : 'rounded-2xl rounded-tl-none bg-white text-gray-800 border border-gray-100'
+                        ? 'bg-black text-white'
+                        : 'bg-white text-black'
                     }`}
                   >
                     {msg.text}
@@ -94,9 +99,9 @@ export const ChatBot: React.FC = () => {
               ))}
               {isLoading && (
                 <div className="flex justify-start">
-                  <div className="flex max-w-[85%] items-center gap-2 rounded-2xl rounded-tl-none bg-white px-4 py-3 text-sm text-gray-500 shadow-sm border border-gray-100">
+                  <div className="flex max-w-[85%] items-center gap-2 border-2 border-black bg-white px-4 py-3 text-sm font-bold shadow-neo-sm">
                     <Loader2 size={16} className="animate-spin" />
-                    <span className="text-xs">Kai is thinking...</span>
+                    <span className="font-mono text-xs">COMPUTING...</span>
                   </div>
                 </div>
               )}
@@ -105,22 +110,22 @@ export const ChatBot: React.FC = () => {
           </div>
 
           {/* Input */}
-          <div className="border-t bg-white p-3">
-            <div className="flex items-center gap-2 rounded-full border border-gray-200 bg-gray-50 px-4 py-2 focus-within:border-brand-300 focus-within:ring-2 focus-within:ring-brand-100">
+          <div className="border-t-2 border-black bg-white p-4">
+            <div className="flex items-center gap-2">
               <input
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyPress}
-                placeholder="Ask about pricing, hours..."
-                className="flex-1 bg-transparent text-sm outline-none placeholder:text-gray-400"
+                placeholder="TYPE HERE..."
+                className="flex-1 border-2 border-black bg-gray-50 px-3 py-2 text-sm font-bold outline-none focus:bg-yellow-100 placeholder:font-mono"
               />
               <button
                 onClick={handleSend}
                 disabled={!input.trim() || isLoading}
-                className="text-brand-900 hover:text-brand-600 disabled:opacity-30"
+                className="border-2 border-black bg-neo-green p-2 text-black shadow-neo-sm hover:bg-green-400 disabled:opacity-50 disabled:cursor-not-allowed active:shadow-none active:translate-x-[2px] active:translate-y-[2px]"
               >
-                <Send size={18} />
+                <Send size={20} strokeWidth={2.5} />
               </button>
             </div>
           </div>

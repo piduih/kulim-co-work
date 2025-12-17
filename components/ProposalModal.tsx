@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Download, TrendingUp, Users, Cpu, MapPin } from 'lucide-react';
+import { X, Download, TrendingUp, Users, Cpu } from 'lucide-react';
 import { Button } from './Button';
 
 interface ProposalModalProps {
@@ -10,40 +10,40 @@ export const ProposalModal: React.FC<ProposalModalProps> = ({ onClose }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
       <div 
-        className="absolute inset-0 bg-gray-900/60 backdrop-blur-sm" 
+        className="absolute inset-0 bg-black/50 backdrop-blur-sm" 
         onClick={onClose}
       ></div>
       
-      <div className="relative flex max-h-[90vh] w-full max-w-4xl flex-col overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-gray-900/5">
+      <div className="relative flex max-h-[90vh] w-full max-w-4xl flex-col overflow-hidden border-4 border-black bg-white shadow-neo-lg">
         {/* Header */}
-        <div className="flex items-center justify-between border-b border-gray-100 bg-brand-50 px-6 py-4">
+        <div className="flex items-center justify-between border-b-4 border-black bg-neo-bg px-6 py-4">
           <div>
-            <h2 className="text-xl font-bold text-gray-900">Business Proposal</h2>
-            <p className="text-sm text-brand-600">Kulim Co-Work Strategic Overview</p>
+            <h2 className="text-2xl font-black uppercase text-black">Business_Proposal.pdf</h2>
+            <p className="font-mono text-xs font-bold text-black/70">CONFIDENTIAL // KULIM CO-WORK</p>
           </div>
-          <div className="flex items-center gap-2">
-            <Button variant="outline" size="sm" onClick={() => window.print()} className="hidden sm:flex">
-              <Download size={16} className="mr-2" /> Print PDF
+          <div className="flex items-center gap-3">
+            <Button variant="outline" size="sm" onClick={() => window.print()} className="hidden sm:flex border-2 border-black shadow-neo-sm bg-white hover:bg-gray-50">
+              <Download size={16} className="mr-2" /> PRINT
             </Button>
             <button 
               onClick={onClose}
-              className="rounded-full p-2 text-gray-500 hover:bg-gray-100 transition-colors"
+              className="flex h-10 w-10 items-center justify-center border-2 border-black bg-red-500 text-white shadow-neo-sm hover:bg-red-600 transition-colors"
             >
-              <X size={20} />
+              <X size={24} strokeWidth={3} />
             </button>
           </div>
         </div>
 
         {/* Scrollable Content */}
-        <div className="flex-1 overflow-y-auto p-6 sm:p-10 font-sans">
+        <div className="flex-1 overflow-y-auto p-6 sm:p-10 font-sans bg-white">
           <div className="mx-auto max-w-3xl space-y-12">
             
             {/* Executive Summary */}
-            <section>
-              <h3 className="flex items-center gap-2 text-2xl font-bold text-gray-900 mb-4">
-                <TrendingUp className="text-brand-600" /> Executive Summary
+            <section className="border-2 border-black p-6 shadow-neo-sm">
+              <h3 className="flex items-center gap-3 text-2xl font-black uppercase text-black mb-4">
+                <TrendingUp className="text-black" /> Executive Summary
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-black font-medium leading-relaxed">
                 <strong>Kulim Co-Work</strong> aims to establish the premier flexible workspace ecosystem in Kulim, Kedah. 
                 Capitalizing on the overflow from the <strong>Kulim Hi-Tech Park</strong> and the growing remote-work culture 
                 in semi-urban Malaysia, we provide an enterprise-grade environment with low operational overhead through AI automation.
@@ -52,92 +52,89 @@ export const ProposalModal: React.FC<ProposalModalProps> = ({ onClose }) => {
 
             {/* The Opportunity */}
             <div className="grid gap-8 md:grid-cols-2">
-              <section className="rounded-xl bg-gray-50 p-6 border border-gray-100">
-                <h4 className="font-bold text-gray-900 mb-2">The Problem</h4>
-                <p className="text-sm text-gray-600">
+              <section className="bg-gray-100 p-6 border-2 border-black">
+                <h4 className="font-black uppercase text-black mb-2 border-b-2 border-black inline-block">The Problem</h4>
+                <p className="text-sm font-medium text-black mt-2">
                   Tech professionals and students in Kulim currently lack dedicated workspaces. 
-                  Cafes offer unreliable WiFi and noise, while traditional offices require expensive long-term leases 
-                  unsuitable for the gig economy.
+                  Cafes offer unreliable WiFi and noise, while traditional offices require expensive long-term leases.
                 </p>
               </section>
-              <section className="rounded-xl bg-brand-50 p-6 border border-brand-100">
-                <h4 className="font-bold text-gray-900 mb-2">The Solution</h4>
-                <p className="text-sm text-gray-600">
+              <section className="bg-neo-bg p-6 border-2 border-black">
+                <h4 className="font-black uppercase text-black mb-2 border-b-2 border-black inline-block">The Solution</h4>
+                <p className="text-sm font-medium text-black mt-2">
                   A hybrid workspace model offering high-speed Unifi connectivity (300Mbps), 
                   ergonomic infrastructure, and flexible "pay-as-you-go" pricing. 
-                  Positioned as the "Third Place" between home and the office.
                 </p>
               </section>
             </div>
 
             {/* Operational Strategy */}
             <section>
-              <h3 className="flex items-center gap-2 text-xl font-bold text-gray-900 mb-4">
-                <Cpu className="text-brand-600" /> AI-First Operations
+              <h3 className="flex items-center gap-3 text-xl font-black uppercase text-black mb-4">
+                <Cpu className="text-black" /> AI-First Operations
               </h3>
-              <p className="text-gray-600 mb-4">
-                Unlike traditional coworking spaces burdened by heavy staffing costs, Kulim Co-Work leverages <strong>"Kai"</strong>, 
-                our proprietary AI Community Manager trained on Gemini 2.5 Flash.
+              <p className="text-black mb-4 font-medium">
+                Kulim Co-Work leverages <strong>"Kai"</strong>, our proprietary AI Community Manager trained on Gemini 2.5 Flash.
               </p>
-              <ul className="list-disc pl-5 space-y-2 text-gray-600">
-                <li><strong>24/7 Availability:</strong> Instant responses to pricing, scheduling, and amenity queries.</li>
-                <li><strong>Cost Reduction:</strong> Reduces the need for full-time front-desk staff by 60%.</li>
-                <li><strong>Scalability:</strong> The digital infrastructure is ready to replicate in other Tier-2 cities (e.g., Sungai Petani, Batu Kawan).</li>
+              <ul className="space-y-2 font-mono text-sm border-l-4 border-black pl-4">
+                <li><span className="font-bold">></span> 24/7 Availability</li>
+                <li><span className="font-bold">></span> Reduces staffing costs by 60%</li>
+                <li><span className="font-bold">></span> Scalable digital infrastructure</li>
               </ul>
             </section>
 
             {/* Target Market */}
             <section>
-              <h3 className="flex items-center gap-2 text-xl font-bold text-gray-900 mb-4">
-                <Users className="text-brand-600" /> Target Market
+              <h3 className="flex items-center gap-3 text-xl font-black uppercase text-black mb-4">
+                <Users className="text-black" /> Target Market
               </h3>
               <div className="grid gap-4 sm:grid-cols-3">
-                <div className="p-4 border border-gray-200 rounded-lg text-center">
-                  <div className="font-bold text-gray-900">Remote Devs</div>
-                  <div className="text-xs text-gray-500 mt-1">Spillover from Penang/KL returning to hometowns.</div>
+                <div className="p-4 border-2 border-black text-center shadow-neo-sm bg-white">
+                  <div className="font-bold uppercase">Remote Devs</div>
+                  <div className="text-xs font-mono mt-2">Penang/KL spillover</div>
                 </div>
-                <div className="p-4 border border-gray-200 rounded-lg text-center">
-                  <div className="font-bold text-gray-900">Hi-Tech Park Engineers</div>
-                  <div className="text-xs text-gray-500 mt-1">Looking for off-site deep work locations.</div>
+                <div className="p-4 border-2 border-black text-center shadow-neo-sm bg-white">
+                  <div className="font-bold uppercase">Engineers</div>
+                  <div className="text-xs font-mono mt-2">Kulim Hi-Tech Park</div>
                 </div>
-                <div className="p-4 border border-gray-200 rounded-lg text-center">
-                  <div className="font-bold text-gray-900">Students</div>
-                  <div className="text-xs text-gray-500 mt-1">Polytechnic & UniKL students needing reliable internet.</div>
+                <div className="p-4 border-2 border-black text-center shadow-neo-sm bg-white">
+                  <div className="font-bold uppercase">Students</div>
+                  <div className="text-xs font-mono mt-2">Polytechnic / UniKL</div>
                 </div>
               </div>
             </section>
 
             {/* Financial Model */}
-            <section className="bg-gray-900 text-white p-8 rounded-2xl">
-              <h3 className="text-xl font-bold mb-6">Revenue Model</h3>
-              <div className="space-y-6">
+            <section className="bg-black text-white p-8 border-2 border-black shadow-neo">
+              <h3 className="text-xl font-black uppercase mb-6 border-b-2 border-white pb-2 inline-block">Revenue Model</h3>
+              <div className="space-y-6 font-mono">
                 <div className="flex justify-between items-center border-b border-gray-700 pb-4">
                   <div>
                     <span className="block font-bold text-lg">Daily Pass (RM 25)</span>
-                    <span className="text-gray-400 text-sm">High volume, low friction. Cash flow engine.</span>
+                    <span className="text-gray-400 text-xs">High volume, low friction.</span>
                   </div>
-                  <span className="text-brand-300 font-mono">~30% Rev</span>
+                  <span className="text-neo-bg">~30%</span>
                 </div>
                 <div className="flex justify-between items-center border-b border-gray-700 pb-4">
                   <div>
-                    <span className="block font-bold text-lg">Monthly Membership (RM 350)</span>
-                    <span className="text-gray-400 text-sm">Recurring revenue (MRR). High LTV retention.</span>
+                    <span className="block font-bold text-lg">Monthly (RM 350)</span>
+                    <span className="text-gray-400 text-xs">Recurring Revenue (MRR).</span>
                   </div>
-                  <span className="text-brand-300 font-mono">~60% Rev</span>
+                  <span className="text-neo-bg">~60%</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <div>
-                    <span className="block font-bold text-lg">Virtual Office / Add-ons</span>
-                    <span className="text-gray-400 text-sm">Mail handling, locker rentals, event space.</span>
+                    <span className="block font-bold text-lg">Add-ons</span>
+                    <span className="text-gray-400 text-xs">Mail, Lockers, Events.</span>
                   </div>
-                  <span className="text-brand-300 font-mono">~10% Rev</span>
+                  <span className="text-neo-bg">~10%</span>
                 </div>
               </div>
             </section>
 
             {/* Footer of Modal */}
-            <div className="text-center pt-8 text-sm text-gray-400 border-t border-gray-100">
-              <p>Generated by Kulim Co-Work Strategic Planning • {new Date().getFullYear()}</p>
+            <div className="text-center pt-8 text-xs font-mono text-gray-500 border-t-2 border-black">
+              <p>GENERATED BY KULIM CO-WORK STRATEGIC PLANNING • {new Date().getFullYear()}</p>
             </div>
           </div>
         </div>
