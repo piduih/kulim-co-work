@@ -77,9 +77,9 @@ export const ProposalModal: React.FC<ProposalModalProps> = ({ onClose }) => {
                 Kulim Co-Work leverages <strong>"Kai"</strong>, our proprietary AI Community Manager trained on Gemini 2.5 Flash.
               </p>
               <ul className="space-y-2 font-mono text-sm border-l-4 border-black pl-4">
-                <li><span className="font-bold">></span> 24/7 Availability</li>
-                <li><span className="font-bold">></span> Reduces staffing costs by 60%</li>
-                <li><span className="font-bold">></span> Scalable digital infrastructure</li>
+                <li><span className="font-bold">&gt;</span> 24/7 Availability</li>
+                <li><span className="font-bold">&gt;</span> Reduces staffing costs by 60%</li>
+                <li><span className="font-bold">&gt;</span> Scalable digital infrastructure</li>
               </ul>
             </section>
 
