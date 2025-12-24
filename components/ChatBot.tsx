@@ -10,7 +10,7 @@ export const ChatBot: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'model',
-      text: "Hi! I'm Kai. Boring weekend? Ask me anything about the space.",
+      text: "Yo! Kai di sini. Nak tahu macam mana nak produktif 10x ganda di Kulim? Tanya je.",
       timestamp: new Date()
     }
   ]);
@@ -70,7 +70,7 @@ export const ChatBot: React.FC = () => {
               </div>
               <div>
                 <h3 className="text-base font-black uppercase">Kai_Bot.exe</h3>
-                <p className="font-mono text-xs">● System Online</p>
+                <p className="font-mono text-xs">● Ready To Serve</p>
               </div>
             </div>
             <button onClick={() => setIsOpen(false)} className="hover:text-black">
@@ -101,7 +101,7 @@ export const ChatBot: React.FC = () => {
                 <div className="flex justify-start">
                   <div className="flex max-w-[85%] items-center gap-2 border-2 border-black bg-white px-4 py-3 text-sm font-bold shadow-neo-sm">
                     <Loader2 size={16} className="animate-spin" />
-                    <span className="font-mono text-xs">COMPUTING...</span>
+                    <span className="font-mono text-xs">AI SEDANG BERFIKIR...</span>
                   </div>
                 </div>
               )}
@@ -117,7 +117,7 @@ export const ChatBot: React.FC = () => {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyPress}
-                placeholder="TYPE HERE..."
+                placeholder="Tanya pasal harga/tempat..."
                 className="flex-1 border-2 border-black bg-gray-50 px-3 py-2 text-sm font-bold outline-none focus:bg-yellow-100 placeholder:font-mono"
               />
               <button

@@ -18,12 +18,12 @@ export const ProposalModal: React.FC<ProposalModalProps> = ({ onClose }) => {
         {/* Header */}
         <div className="flex items-center justify-between border-b-4 border-black bg-neo-bg px-6 py-4">
           <div>
-            <h2 className="text-2xl font-black uppercase text-black">Business_Proposal.pdf</h2>
-            <p className="font-mono text-xs font-bold text-black/70">CONFIDENTIAL // KULIM CO-WORK</p>
+            <h2 className="text-2xl font-black uppercase text-black">GRAND_SLAM_OFFER.pdf</h2>
+            <p className="font-mono text-xs font-bold text-black/70">CONFIDENTIAL // INVESTOR DECK</p>
           </div>
           <div className="flex items-center gap-3">
             <Button variant="outline" size="sm" onClick={() => window.print()} className="hidden sm:flex border-2 border-black shadow-neo-sm bg-white hover:bg-gray-50">
-              <Download size={16} className="mr-2" /> PRINT
+              <Download size={16} className="mr-2" /> CETAK
             </Button>
             <button 
               onClick={onClose}
@@ -41,29 +41,31 @@ export const ProposalModal: React.FC<ProposalModalProps> = ({ onClose }) => {
             {/* Executive Summary */}
             <section className="border-2 border-black p-6 shadow-neo-sm">
               <h3 className="flex items-center gap-3 text-2xl font-black uppercase text-black mb-4">
-                <TrendingUp className="text-black" /> Executive Summary
+                <TrendingUp className="text-black" /> The Hook (Ringkasan)
               </h3>
               <p className="text-black font-medium leading-relaxed">
-                <strong>Kulim Co-Work</strong> aims to establish the premier flexible workspace ecosystem in Kulim, Kedah. 
-                Capitalizing on the overflow from the <strong>Kulim Hi-Tech Park</strong> and the growing remote-work culture 
-                in semi-urban Malaysia, we provide an enterprise-grade environment with low operational overhead through AI automation.
+                **Kulim Co-Work** bukan sekadar pejabat sewa. Ia adalah **Ecosystem**. 
+                Kami menyelesaikan masalah "Isolation" dan "Low Productivity" yang dihadapi oleh remote workers di Kulim Hi-Tech Park.
+                Model kami? Low Overhead (AI Managed) + High Value Offer.
               </p>
             </section>
 
             {/* The Opportunity */}
             <div className="grid gap-8 md:grid-cols-2">
               <section className="bg-gray-100 p-6 border-2 border-black">
-                <h4 className="font-black uppercase text-black mb-2 border-b-2 border-black inline-block">The Problem</h4>
+                <h4 className="font-black uppercase text-black mb-2 border-b-2 border-black inline-block">Masalah (The Pain)</h4>
                 <p className="text-sm font-medium text-black mt-2">
-                  Tech professionals and students in Kulim currently lack dedicated workspaces. 
-                  Cafes offer unreliable WiFi and noise, while traditional offices require expensive long-term leases.
+                  1. Internet rumah slow. <br/>
+                  2. Kedai kopi bising & tak selesa. <br/>
+                  3. Sewa ofis tradisional mahal & kontrak leceh (2 tahun+).
                 </p>
               </section>
               <section className="bg-neo-bg p-6 border-2 border-black">
-                <h4 className="font-black uppercase text-black mb-2 border-b-2 border-black inline-block">The Solution</h4>
+                <h4 className="font-black uppercase text-black mb-2 border-b-2 border-black inline-block">Solusi Kami (The Gain)</h4>
                 <p className="text-sm font-medium text-black mt-2">
-                  A hybrid workspace model offering high-speed Unifi connectivity (300Mbps), 
-                  ergonomic infrastructure, and flexible "pay-as-you-go" pricing. 
+                  1. Enterprise Grade WiFi (300Mbps). <br/>
+                  2. Pay-Per-Use (Harian/Bulanan). <br/>
+                  3. **Jaminan Wang Dikembalikan** jika WiFi slow.
                 </p>
               </section>
             </div>
@@ -71,70 +73,70 @@ export const ProposalModal: React.FC<ProposalModalProps> = ({ onClose }) => {
             {/* Operational Strategy */}
             <section>
               <h3 className="flex items-center gap-3 text-xl font-black uppercase text-black mb-4">
-                <Cpu className="text-black" /> AI-First Operations
+                <Cpu className="text-black" /> Unfair Advantage (AI)
               </h3>
               <p className="text-black mb-4 font-medium">
-                Kulim Co-Work leverages <strong>"Kai"</strong>, our proprietary AI Community Manager trained on Gemini 2.5 Flash.
+                Kos operasi kami rendah sebab kami guna **"Kai"** (Gemini 2.5 Flash) sebagai Community Manager.
               </p>
               <ul className="space-y-2 font-mono text-sm border-l-4 border-black pl-4">
-                <li><span className="font-bold">&gt;</span> 24/7 Availability</li>
-                <li><span className="font-bold">&gt;</span> Reduces staffing costs by 60%</li>
-                <li><span className="font-bold">&gt;</span> Scalable digital infrastructure</li>
+                <li><span className="font-bold">&gt;</span> Servis 24/7 tanpa cuti sakit.</li>
+                <li><span className="font-bold">&gt;</span> Automasi Jualan & Customer Service.</li>
+                <li><span className="font-bold">&gt;</span> Margin keuntungan lebih tinggi dari pesaing.</li>
               </ul>
             </section>
 
             {/* Target Market */}
             <section>
               <h3 className="flex items-center gap-3 text-xl font-black uppercase text-black mb-4">
-                <Users className="text-black" /> Target Market
+                <Users className="text-black" /> Siapa Bayar Kami?
               </h3>
               <div className="grid gap-4 sm:grid-cols-3">
                 <div className="p-4 border-2 border-black text-center shadow-neo-sm bg-white">
                   <div className="font-bold uppercase">Remote Devs</div>
-                  <div className="text-xs font-mono mt-2">Penang/KL spillover</div>
+                  <div className="text-xs font-mono mt-2">Spillover Penang/KL.</div>
                 </div>
                 <div className="p-4 border-2 border-black text-center shadow-neo-sm bg-white">
-                  <div className="font-bold uppercase">Engineers</div>
-                  <div className="text-xs font-mono mt-2">Kulim Hi-Tech Park</div>
+                  <div className="font-bold uppercase">Tech Giants</div>
+                  <div className="text-xs font-mono mt-2">Staff Infineon/Intel.</div>
                 </div>
                 <div className="p-4 border-2 border-black text-center shadow-neo-sm bg-white">
-                  <div className="font-bold uppercase">Students</div>
-                  <div className="text-xs font-mono mt-2">Polytechnic / UniKL</div>
+                  <div className="font-bold uppercase">Digital Marketer</div>
+                  <div className="text-xs font-mono mt-2">Perlukan speed.</div>
                 </div>
               </div>
             </section>
 
             {/* Financial Model */}
             <section className="bg-black text-white p-8 border-2 border-black shadow-neo">
-              <h3 className="text-xl font-black uppercase mb-6 border-b-2 border-white pb-2 inline-block">Revenue Model</h3>
+              <h3 className="text-xl font-black uppercase mb-6 border-b-2 border-white pb-2 inline-block">The Math (Duit Masuk)</h3>
               <div className="space-y-6 font-mono">
                 <div className="flex justify-between items-center border-b border-gray-700 pb-4">
                   <div>
                     <span className="block font-bold text-lg">Daily Pass (RM 25)</span>
-                    <span className="text-gray-400 text-xs">High volume, low friction.</span>
+                    <span className="text-gray-400 text-xs">Customer Acquisition (Front End).</span>
                   </div>
-                  <span className="text-neo-bg">~30%</span>
+                  <span className="text-neo-bg">Volume Game</span>
                 </div>
                 <div className="flex justify-between items-center border-b border-gray-700 pb-4">
                   <div>
                     <span className="block font-bold text-lg">Monthly (RM 350)</span>
-                    <span className="text-gray-400 text-xs">Recurring Revenue (MRR).</span>
+                    <span className="text-gray-400 text-xs">Recurring Revenue (MRR - Back End).</span>
                   </div>
-                  <span className="text-neo-bg">~60%</span>
+                  <span className="text-neo-bg">Cash Cow</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <div>
-                    <span className="block font-bold text-lg">Add-ons</span>
-                    <span className="text-gray-400 text-xs">Mail, Lockers, Events.</span>
+                    <span className="block font-bold text-lg">Upsells</span>
+                    <span className="text-gray-400 text-xs">Virtual Office, Event Space.</span>
                   </div>
-                  <span className="text-neo-bg">~10%</span>
+                  <span className="text-neo-bg">Profit Maximizer</span>
                 </div>
               </div>
             </section>
 
             {/* Footer of Modal */}
             <div className="text-center pt-8 text-xs font-mono text-gray-500 border-t-2 border-black">
-              <p>GENERATED BY KULIM CO-WORK STRATEGIC PLANNING • {new Date().getFullYear()}</p>
+              <p>DOKUMEN INI ADALAH RAHSIA SULIT • {new Date().getFullYear()}</p>
             </div>
           </div>
         </div>
